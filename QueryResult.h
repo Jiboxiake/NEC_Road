@@ -8,11 +8,11 @@
 #endif //NEC_ROADN_ALGORITHMS_QUERYRESULT_H
 #ifndef QUERYResult
 #define QUERYResult
-extern struct _SPResult{
+struct _SPResult{
     float result;
     int number_of_hops;
 };
-extern struct _priority_queue_entry{
+struct _priority_queue_entry{
     int id;
     float weight;
     int previousID;

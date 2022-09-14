@@ -37,9 +37,6 @@ SPResult Dijkstra::simple_Dijkstra(Graph g, int source, int destination) {
         for(int i=currentVertex->startIndex;i<=currentVertex->endIndex;i++){//purely sequential adjacency list scan, hope we can optimize cache performance and vectorization here
             currentEdge = g.edges.at(i);
             newDistance = e1.weight+currentEdge->length;
-#if DIJKSTRA_TEST
-            assert(currentEdge->from==e1.id);
-#endif
             toVertex = g.vertices.at(currentEdge->to);
             if(distmap.count(toVertex->id)==1){
                 originalDistance=distmap[toVertex->id];
@@ -53,9 +50,6 @@ SPResult Dijkstra::simple_Dijkstra(Graph g, int source, int destination) {
                     distmap[toVertex->id]=newDistance;
                 }
             }else{
-#if DIJKSTRA_TEST
-                assert(distmap.count(toVertex->id)==0);
-#endif
                 distmap[toVertex->id]=newDistance;
                 Entry e2;
                 e2.weight = newDistance;
