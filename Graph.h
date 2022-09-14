@@ -12,14 +12,14 @@
 #include<map>
 #include <string>
 #define BADID -100
-extern struct _vertex{
+ struct _vertex{
     int id=-1;
     long morton=-1;
     int startIndex=-1;
     int endIndex=-1;
 };
 
-extern struct _edge{
+ struct _edge{
     int id;
     int from;
     int to;
