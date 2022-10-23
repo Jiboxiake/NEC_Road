@@ -66,14 +66,14 @@ void Graph::insert_edges() {
         e->label=label;
         e->next= NULL;
         if(!vertices.count(fromID)==1){
-            assert(false);
+            //assert(false);
         }
         current = vertices.at(fromID);
         if(fromID!=previousID){
             if(previousID!=BADID){
                 previous = vertices.at(previousID);
                 if(previous->startIndex<0){
-                    assert(false);
+                    //assert(false);
                 }
                 previous->endIndex = edges.size()-1;
             }
