@@ -3,6 +3,7 @@
 //
 #include "Dijkstra.h"
 #include <queue>
+#include <limits>
 SPResult Dijkstra::simple_Dijkstra(Graph g, int source, int destination) {
     SPResult result;
     result.number_of_hops=0;
